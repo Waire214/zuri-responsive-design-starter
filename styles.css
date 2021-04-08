@@ -1,4 +1,4 @@
-/* I did not add the hamburger icon to the html becaause we were not instructed to touch the HTML file*/
+/* No JavaScript used*/
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
 
@@ -20,7 +20,14 @@ div.logo {
   font-size: 1.5rem;
   color: #bcc3c7;
 }
-
+.checkbtn,
+.hidecheckbtn {
+  display: none;
+  transition: 0.4s ease;
+}
+#check {
+  display: none;
+}
 ul.nav-links {
   display: flex;
   margin: 0;
@@ -355,30 +362,37 @@ div.footer h6 {
   div.logo {
     font-size: 1.15rem;
   }
-  ul {
-    height: 40px;
-    width: 40px;
-    background: url("icons8-menu-26.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  ul:hover {
-    background: #304353;
+  .checkbtn {
     display: block;
+    cursor: pointer;
   }
-  ul:hover a {
-    display: block;
-  }
-  ul li a {
+  #check:checked ~ .checkbtn {
     display: none;
   }
+  #check:checked ~ .hidecheckbtn {
+    display: block;
+  }
+  .fas {
+    color: #bcc3c7;
+    font-size: 30px;
+  }
+  ul.nav-links {
+    display: none;
+  }
+  #check:checked ~ ul.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80px;
+    height: 150px;
+    transform: translate(80px, 30px);
+  }
   ul li a:hover {
-    padding: 0.45rem;
+    padding: 0.7rem;
   }
   ul li {
     margin: 0 0.4vw;
-    font-size: 0.7rem;
+    font-size: 0.85rem;
   }
   /* hero section */
 
